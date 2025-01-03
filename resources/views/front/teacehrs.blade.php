@@ -21,180 +21,62 @@
     </style>
 @endsection
 @section('content')
+    <!-- Header Start -->
+    <header>
+        <div class="bannerBox">
+            <!-- Header Nav Start -->
+            <x-header></x-header>
+            <!-- Header Nav End -->
 
-   
-        <!-- Header Start -->
-        <header>
-            <div class="bannerBox">
-                <!-- Header Nav Start -->
-                <x-header></x-header>
-                <!-- Header Nav End -->
-
-                <!-- Image Header Start-->
-                <div class="mainContent withImage">
-                    <div class="imageHeader" style="padding-bottom: 0px;">
-                        <div class="container">
-                            <h1 class="pageTitle text-dark">O'qituvchilar</h1>
-                            <nav aria-label="breadcrumb">
-                                <ol id="w5" class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{route('home')}}">Asosiy</a></li>
-                                    <li class="breadcrumb-item " aria-current="page">O'qituvchilar</li>
-                                </ol>
-                            </nav>
-                        </div>
+            <!-- Image Header Start-->
+            <div class="mainContent withImage">
+                <div class="imageHeader" style="padding-bottom: 0px;">
+                    <div class="container">
+                        <h1 class="pageTitle text-dark">O'qituvchilar</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol id="w5" class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{{ route('home') }}">Asosiy</a></li>
+                                <li class="breadcrumb-item " aria-current="page">O'qituvchilar</li>
+                            </ol>
+                        </nav>
                     </div>
                 </div>
-                <!-- Image Header End -->
-
             </div>
-        </header>
-        <!-- Header End -->
+            <!-- Image Header End -->
 
-        <!-- Main section Start -->
-        <main>
-            <section>
-                <div class="teachers">
-                    <!-- oliy toifali oqtuvchilar -->
-                    <div class="container deputy_director">
-                        <h1 class="teachers__title mini mb-4">Oliy toifali o'qituvchilar</h1>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-3 col-sm-6">
-                                <a href="#" class="deputy_director-main">
-                                    <img src="/image/Teachers.jpg" width="90%" alt="Zam Director">
-                                    <div class="deputy_director-details">
-                                        <h1><b>Rustamov</b><br>Rustam<br>Rustamovich</h1>
-                                        <span>Zam direktor</span>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Main section Start -->
+    <main>
+        <section>
+            <div class="teachers">
+                <div class="container">
+                    <div class="row">
+                        @foreach ($staff as $item)
+                            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                                <a href="#" class="card h-100 text-center">
+                                    <img src="{{ asset($item->image) }}" class="card-img-top"  style=" height: 70%; object-fit: cover;"  alt="Zam Director">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ $item->first_name }} {{ $item->last_name }}</h5>
+                                        <p class="card-text">{{ $item->profession->name }}</p>
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-lg-4 col-md-3 col-sm-6">
-                                <a href="#" class="deputy_director-main">
-                                    <img src="/image/Teachers.jpg" width="90%" alt="Zam Director">
-                                    <div class="deputy_director-details">
-                                        <h1><b>Rustamov</b><br>Rustam<br>Rustamovich</h1>
-                                        <span>M'anaviyatchi</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-3 col-sm-6">
-                                <a href="#" class="deputy_director-main">
-                                    <img src="/image/Teachers.jpg" width="90%" alt="Zam Director">
-                                    <div class="deputy_director-details">
-                                        <h1><b>Rustamov</b><br>Rustam<br>Rustamovich</h1>
-                                        <span>Bo'lim boshlig'i</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Birinchi toifali oqtuvchilar -->
-                    <div class="container deputy_director">
-                        <h1 class="teachers__title mini mb-4">Birinchi toifali o'qituvchilar</h1>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-3 col-sm-6">
-                                <a href="#" class="deputy_director-main">
-                                    <img src="/image/Teachers.jpg" width="90%" alt="Zam Director">
-                                    <div class="deputy_director-details">
-                                        <h1><b>Rustamov</b><br>Rustam<br>Rustamovich</h1>
-                                        <span>Zam direktor</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-3 col-sm-6">
-                                <a href="#" class="deputy_director-main">
-                                    <img src="/image/Teachers.jpg" width="90%" alt="Zam Director">
-                                    <div class="deputy_director-details">
-                                        <h1><b>Rustamov</b><br>Rustam<br>Rustamovich</h1>
-                                        <span>M'anaviyatchi</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-3 col-sm-6">
-                                <a href="#" class="deputy_director-main">
-                                    <img src="/image/Teachers.jpg" width="90%" alt="Zam Director">
-                                    <div class="deputy_director-details">
-                                        <h1><b>Rustamov</b><br>Rustam<br>Rustamovich</h1>
-                                        <span>Bo'lim boshlig'i</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Ikkinchi toifali oqtuvchilar -->
-                    <div class="container deputy_director">
-                        <h1 class="teachers__title mini mb-4">Ikkinchi toifali o'qituvchilar</h1>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-3 col-sm-6">
-                                <a href="#" class="deputy_director-main">
-                                    <img src="/image/Teachers.jpg" width="90%" alt="Zam Director">
-                                    <div class="deputy_director-details">
-                                        <h1><b>Rustamov</b><br>Rustam<br>Rustamovich</h1>
-                                        <span>Zam direktor</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-3 col-sm-6">
-                                <a href="#" class="deputy_director-main">
-                                    <img src="/image/Teachers.jpg" width="90%" alt="Zam Director">
-                                    <div class="deputy_director-details">
-                                        <h1><b>Rustamov</b><br>Rustam<br>Rustamovich</h1>
-                                        <span>M'anaviyatchi</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-3 col-sm-6">
-                                <a href="#" class="deputy_director-main">
-                                    <img src="/image/Teachers.jpg" width="90%" alt="Zam Director">
-                                    <div class="deputy_director-details">
-                                        <h1><b>Rustamov</b><br>Rustam<br>Rustamovich</h1>
-                                        <span>Bo'lim boshlig'i</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Mutaxasis toifali oqtuvchilar -->
-                    <div class="container deputy_director">
-                        <h1 class="teachers__title mini mb-4">Mutaxassis toifali o'qituvchilar</h1>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-3 col-sm-6">
-                                <a href="#" class="deputy_director-main">
-                                    <img src="/image/Teachers.jpg" width="90%" alt="Zam Director">
-                                    <div class="deputy_director-details">
-                                        <h1><b>Rustamov</b><br>Rustam<br>Rustamovich</h1>
-                                        <span>Zam direktor</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-3 col-sm-6">
-                                <a href="#" class="deputy_director-main">
-                                    <img src="/image/Teachers.jpg" width="90%" alt="Zam Director">
-                                    <div class="deputy_director-details">
-                                        <h1><b>Rustamov</b><br>Rustam<br>Rustamovich</h1>
-                                        <span>M'anaviyatchi</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-3 col-sm-6">
-                                <a href="#" class="deputy_director-main">
-                                    <img src="/image/Teachers.jpg" width="90%" alt="Zam Director">
-                                    <div class="deputy_director-details">
-                                        <h1><b>Rustamov</b><br>Rustam<br>Rustamovich</h1>
-                                        <span>Bo'lim boshlig'i</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
-            </section>
-        </main>
-        <!-- Main section End -->
+            </div>
+        </section>
+    </main>
+    
+    <!-- Main section End -->
 
-        <!-- Footer Start  -->
+    <!-- Footer Start  -->
 
-        <x-footer></x-footer>
-        <!-- Footer End -->
+    <x-footer></x-footer>
+    <!-- Footer End -->
 
     </body>
 @endsection

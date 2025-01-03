@@ -55,30 +55,29 @@
                         <h1 class="text-center text-uppercase mb-5 title title_map">Biz bilan bog'laning</h1>
                         <div class="row">
                             <div class="col-md-7">
-                                <form action="" method="post">
+                                <form action="{{ route('contact.send') }}" method="post">
+                                    {{csrf_field()}} 
                                     <div class="row contact_row1">
                                         <div class="col-6">
-                                            <input type="text" placeholder="I.F.Sh" name="name">
+                                            <input type="text" placeholder="I.F.Sh" name="name" required>
                                         </div>
                                         <div class="col-6">
-                                            <input type="email" placeholder="E.pochta" name="email">
+                                            <input type="email" placeholder="E.pochta" name="email" required>
                                         </div>
                                     </div>
                                     <div class="row contact_row2">
                                         <div class="col-6">
-                                            <input type="tel" value="+998" placeholder="Telefon" name="phone">
-                                        </div>
-                                        <div class="col-6">
-                                            <input type="text" placeholder="Mavzu" name="mavzu">
+                                            <input type="text" placeholder="Mavzu" name="mavzu" required>
                                         </div>
                                     </div>
                                     <div class="row contact_row3">
                                         <div class="col-12">
-                                            <input type="text" placeholder="Xabarlar" name="message">
+                                            <input type="text" placeholder="Xabarlar" name="message" required>
                                             <button type="submit" class="contact_btn text-center">Yuborish</button>
                                         </div>
                                     </div>
                                 </form>
+                                
                             </div>
                             <div class="col-md-5">
                                 <h2 class="mb-3">329-sonli umumta’lim maktabi</h2>

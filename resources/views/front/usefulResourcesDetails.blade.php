@@ -1,91 +1,86 @@
 @extends('layouts.frontLayout')
 @section('title')
-Foydali Resurslar
+    Foydali Resurslar
 @endsection
 @section('content')
-<body>
-    <!-- Header Start -->
-    <header>
-        <div class="bannerBox">
 
-            <!-- Header Nav Start -->
-            <x-header></x-header>
-            <!-- Header Nav End -->
+    <body>
+        <!-- Header Start -->
+        <header>
+            <div class="bannerBox">
 
-            <!-- Image Header Start-->
-            <div class="mainContent withImage">
-                <div class="imageHeader" style="padding-bottom: 0px;">
+                <!-- Header Nav Start -->
+                <x-header></x-header>
+                <!-- Header Nav End -->
+
+                <!-- Image Header Start-->
+                <div class="mainContent withImage">
+                    <div class="imageHeader" style="padding-bottom: 0px;">
+                        <div class="container">
+                            <h1 class="pageTitle text-dark">Foydali resurslar</h1>
+                            <nav aria-label="breadcrumb">
+                                <ol id="w5" class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Asosiy</a></li>
+                                    <li class="breadcrumb-item " aria-current="page">Foydali resurslar</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <!-- Image Header End -->
+
+            </div>
+        </header>
+        <!-- Header End -->
+
+        <!-- Main section Start -->
+        <main>
+            <section>
+                <div class="useful-links">
                     <div class="container">
-                        <h1 class="pageTitle text-dark">Foydali resurslar</h1>
-                        <nav aria-label="breadcrumb">
-                            <ol id="w5" class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{route('home')}}">Asosiy</a></li>
-                                <li class="breadcrumb-item " aria-current="page">Foydali resurslar</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <!-- Image Header End -->
+                        <div class="pageView">
+                            <div class="projectView">
+                                <img alt="logo" src="/image/Useful-links-Detail.jpg">
 
-        </div>
-    </header>
-    <!-- Header End -->
+                                <div class="description">
+                                    <h1 class="simpleTitle">{{ $resource['title'] }}</h1>
 
-    <!-- Main section Start -->
-    <main>
-        <section>
-            <div class="useful-links">
-                <div class="container">
-                    <div class="pageView">
-                        <div class="projectView">
-                            <img alt="logo" src="/image/Useful-links-Detail.jpg">
+                                    <p>{{ $resource['description'] }}</p>
 
-                            <div class="description">
-                                <h1 class="simpleTitle">Attestat.uzedu.uz</h1>
-
-                                <p>Elektron shahodatnoma platformasi. Xalq ta’limi tizimidagi maktab bitiruvchilari
-                                    to‘g‘risidagi ma’lumotlarni avtomatlashtirish maqsadida “Attestat”
-                                    avtomatlashtirilgan axborot tizimi ishga tushirildi. Bugungi kunda jismoniy
-                                    shaxsning shaxsiy identifikasiya raqami (JSHSHIR) bilan bog‘langan holda 1,7 mln.
-                                    bitiruvchilarning shahodatnomalari raqamlashtirilgan.</p>
-
-                                <table id="w0" class="table detail-view projectTable">
-                                    <tbody>
-                                        <tr>
-                                            <th>Veb-sayt</th>
-                                            <td><a href="https://attestat.uzedu.uz/"
-                                                    target="_blank">https://attestat.uzedu.uz/</a></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Qo'shimcha ma'lumot</th>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Saytga havola</th>
-                                            <td><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgCAIAAAAErfB6AAAACXBIWXMAAA7EAAAOxAGVKw4bAAADEUlEQVR4nO3dvUoEQRAAYU80Ft//IcXYxMBsR5il6Z+5or7MwPPYYqAddmcf318/L+J6nf4CqmVgOAPDGRju7fLzx+f7yPf4E5v41u982ud0unxnVzCcgeEMDGdgOAPDXafoVd1e5p1ps24ivTMzZ83Vg9fQFQxnYDgDwxkYzsBw+yl6FZtssyZJxh0KbdfQFQxnYDgDwxkYzsBwkSm6U+f+cGxv/PCp3hUMZ2A4A8MZGM7AcKdP0VmT7ez++SBXMJyB4QwMZ2A4A8NFpujZ2TI2Ic8+b7hqu4auYDgDwxkYzsBwBobbT9GzJ05kyXqWMDZXD15DVzCcgeEMDGdgOAPDXadowD0ML9N7yEddQ1cwnIHhDAxnYDgDw0XOi+7coY1Nraedj3dH0Z0qrmA4A8MZGM7AcAaGyznpru5e5djnZE22WdN41vUJfB9XMJyB4QwMZ2A4A8M9Arcf1E3Ip+1yxz75jrZnJF3BcAaGMzCcgeEMDHedojvf6Bcze2bdaafqbb+PKxjOwHAGhjMwnIHhImd01O0zr2J3a9RNtp1PKabse7uC4QwMZ2A4A8MZGG5/R0fn84Z3nLYTXneHScrk7wqGMzCcgeEMDGdguP0ZHXUnYGTtRZ/212PXsOheGlcwnIHhDAxnYDgDw0X2ojuf7zvq1Lh/P6fzXYoBrmA4A8MZGM7AcAaGi5wXvarbfc0yu6N+57d8ulARBoYzMJyB4QwMl/Puws43+s2eULc67cS8C1cwnIHhDAxnYDgDw+XsRWd5xr3o1VGnmriC4QwMZ2A4A8MZGG5/0l3dZNt5//Ds3SMxnnSnPQPDGRjOwHAGhst5A/gds9N47HPaTnX+92+l/JfhCoYzMJyB4QwMZ2C4yBTdqe6Mjs7TNgb/73AFwxkYzsBwBoYzMNzpU3Rssq27V2T2HSuBE6RdwXAGhjMwnIHhDAwXmaJn3xUYU/d2xbo7rlOeiHQFwxkYzsBwBoYzMNx+ip49tSOm7uS92VOmA1zBcAaGMzCcgeEMDLd/d6GemisYzsBwBoYzMNwvxACCuNxIF1wAAAAASUVORK5CYII="
-                                                    alt=""></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                    <table id="w0" class="table detail-view projectTable">
+                                        <tbody>
+                                            <tr>
+                                                <th>Veb-sayt</th>
+                                                <td><a href="https://attestat.uzedu.uz/"
+                                                        target="_blank">https://attestat.uzedu.uz/</a></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Qo'shimcha ma'lumot</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Saytga havola</th>
+                                                <td><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgCAIAAAAErfB6AAAACXBIWXMAAA7EAAAOxAGVKw4bAAADEUlEQVR4nO3dvUoEQRAAYU80Ft//IcXYxMBsR5il6Z+5or7MwPPYYqAddmcf318/L+J6nf4CqmVgOAPDGRju7fLzx+f7yPf4E5v41u982ud0unxnVzCcgeEMDGdgOAPDXafoVd1e5p1ps24ivTMzZ83Vg9fQFQxnYDgDwxkYzsBw+yl6FZtssyZJxh0KbdfQFQxnYDgDwxkYzsBwkSm6U+f+cGxv/PCp3hUMZ2A4A8MZGM7AcKdP0VmT7ez++SBXMJyB4QwMZ2A4A8NFpujZ2TI2Ic8+b7hqu4auYDgDwxkYzsBwBobbT9GzJ05kyXqWMDZXD15DVzCcgeEMDGdgOAPDXadowD0ML9N7yEddQ1cwnIHhDAxnYDgDw0XOi+7coY1Nraedj3dH0Z0qrmA4A8MZGM7AcAaGyznpru5e5djnZE22WdN41vUJfB9XMJyB4QwMZ2A4A8M9Arcf1E3Ip+1yxz75jrZnJF3BcAaGMzCcgeEMDHedojvf6Bcze2bdaafqbb+PKxjOwHAGhjMwnIHhImd01O0zr2J3a9RNtp1PKabse7uC4QwMZ2A4A8MZGG5/R0fn84Z3nLYTXneHScrk7wqGMzCcgeEMDGdguP0ZHXUnYGTtRZ/212PXsOheGlcwnIHhDAxnYDgDw0X2ojuf7zvq1Lh/P6fzXYoBrmA4A8MZGM7AcAaGi5wXvarbfc0yu6N+57d8ulARBoYzMJyB4QwMl/Puws43+s2eULc67cS8C1cwnIHhDAxnYDgDw+XsRWd5xr3o1VGnmriC4QwMZ2A4A8MZGG5/0l3dZNt5//Ds3SMxnnSnPQPDGRjOwHAGhst5A/gds9N47HPaTnX+92+l/JfhCoYzMJyB4QwMZ2C4yBTdqe6Mjs7TNgb/73AFwxkYzsBwBoYzMNzpU3Rssq27V2T2HSuBE6RdwXAGhjMwnIHhDAwXmaJn3xUYU/d2xbo7rlOeiHQFwxkYzsBwBoYzMNx+ip49tSOm7uS92VOmA1zBcAaGMzCcgeEMDLd/d6GemisYzsBwBoYzMNwvxACCuNxIF1wAAAAASUVORK5CYII="
+                                                        alt=""></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
+
+
+                            <div class="projectImages">
+                            </div>
+
+
                         </div>
-
-
-                        <div class="projectImages">
-                        </div>
-
-
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
-    <!-- Main section End -->
+            </section>
+        </main>
+        <!-- Main section End -->
 
-    <!-- Footer Start  -->
-    <x-footer></x-footer>
-    <!-- Footer End -->
-
-
-@endsection
+        <!-- Footer Start  -->
+        <x-footer></x-footer>
+        <!-- Footer End -->
+    @endsection

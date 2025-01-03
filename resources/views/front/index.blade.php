@@ -19,8 +19,8 @@
                             <div class="logoTextBox">
                                 <div class="col-12"></div>
                                 <h1 class="logoTextBox__title text-center">
-                                    <b>329-sonli umumta'lim <br> maktabi</b> <br>
-                                    Toshkent, Yangihayot tumani
+                                    <b>1-sonli umumta'lim <br> maktabi</b> <br>
+                                    O'zbekiston
                                 </h1>
                                 <div class="quote text-center">
                                     <p class="">"Yangi O'zbekiston - maktab ostonasidan boshlanadi"</p>
@@ -90,25 +90,25 @@
                     <h1 class="text-center text-uppercase mt-5 title">Maktab haqida qisqacha</h1>
                     <div class="col-lg-3 col-md-6">
                         <div class="school_info" data-tilt data-tilt-scale="1.1">
-                            <h2>80</h2>
+                            <h2>{{ $member->class }}</h2>
                             <p>Sinflar soni</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="school_info" data-tilt data-tilt-scale="1.1">
-                            <h2>1800</h2>
+                            <h2>{{ $member->students }}</h2>
                             <p>O'quvchilar soni</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="school_info" data-tilt data-tilt-scale="1.1">
-                            <h2>105</h2>
+                            <h2>{{ $member->teachers }}</h2>
                             <p>O'qtuvchilar soni</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="school_info" data-tilt data-tilt-scale="1.1">
-                            <h2>666</h2>
+                            <h2>{{ $member->graduates }}</h2>
                             <p>Bitiruvchilar soni</p>
                         </div>
                     </div>
@@ -152,60 +152,17 @@
                 <!-- Section News Start -->
                 <div class="news">
                     <div class="row mb-4">
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration=".9s" data-wow-delay=".6s">
-                            <a href="#">
-                                <div class="imageBox">
-                                    <img alt="image" src="image/329-maktab.jpg" width="170px">
-                                </div>
-                                <h1>Rossiya universitetlarida taʼlim olmoqchimisiz? Unda koʻrgazmaga marhamat!</h1>
-                                <span>04 Oktabr 2021</span>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration=".9s" data-wow-delay=".6s">
-                            <a href="#">
-                                <div class="imageBox">
-                                    <img alt="image" src="image/329-maktab.jpg" width="170px">
-                                </div>
-                                <h1>Rossiya universitetlarida taʼlim olmoqchimisiz? Unda koʻrgazmaga marhamat!</h1>
-                                <span>04 Oktabr 2021</span>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration=".9s" data-wow-delay=".6s">
-                            <a href="#">
-                                <div class="imageBox">
-                                    <img alt="image" src="image/329-maktab.jpg" width="170px">
-                                </div>
-                                <h1>Rossiya universitetlarida taʼlim olmoqchimisiz? Unda koʻrgazmaga marhamat!</h1>
-                                <span>04 Oktabr 2021</span>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration=".9s" data-wow-delay=".6s">
-                            <a href="#">
-                                <div class="imageBox">
-                                    <img alt="image" src="image/329-maktab.jpg" width="170px">
-                                </div>
-                                <h1>Rossiya universitetlarida taʼlim olmoqchimisiz? Unda koʻrgazmaga marhamat!</h1>
-                                <span>04 Oktabr 2021</span>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration=".9s" data-wow-delay=".6s">
-                            <a href="#">
-                                <div class="imageBox">
-                                    <img alt="image" src="image/329-maktab.jpg" width="170px">
-                                </div>
-                                <h1>Rossiya universitetlarida taʼlim olmoqchimisiz? Unda koʻrgazmaga marhamat!</h1>
-                                <span>04 Oktabr 2021</span>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration=".9s" data-wow-delay=".6s">
-                            <a href="#">
-                                <div class="imageBox">
-                                    <img alt="image" src="image/329-maktab.jpg" width="170px">
-                                </div>
-                                <h1>Rossiya universitetlarida taʼlim olmoqchimisiz? Unda koʻrgazmaga marhamat!</h1>
-                                <span>04 Oktabr 2021</span>
-                            </a>
-                        </div>
+                        @foreach ($posts as $post)
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration=".9s" data-wow-delay=".6s">
+                                <a href="#">
+                                    <div class="imageBox">
+                                        <img alt="image" src="{{ $post->image }}" width="170px">
+                                    </div>
+                                    <h1>{{ $post->title }}</h1>
+                                    <span>{{ $post->date }}</span>
+                                </a>
+                            </div>
+                        @endforeach
                     </div>
 
                 </div>
@@ -232,34 +189,33 @@
                 <div class="contact">
                     <h1 class="text-center text-uppercase mb-5 title title_map">Biz bilan bog'laning</h1>
                     <div class="row">
-                        <div class="col-lg-7 col-md-12">
-                            <form action="">
-                                <div class="row contact_row1 text-sm-center">
-                                    <div class="col-lg-6 col-md-12 ">
-                                        <input type="text" placeholder="I.F.Sh" name="name">
+                        <div class="col-md-7">
+                            <form action="{{ route('contact.send') }}" method="post">
+                                {{ csrf_field() }}
+                                <div class="row contact_row1">
+                                    <div class="col-6">
+                                        <input type="text" placeholder="I.F.Sh" name="name" required>
                                     </div>
-                                    <div class="col-lg-6 col-md-12 ">
-                                        <input type="email" placeholder="E.pochta" name="email">
+                                    <div class="col-6">
+                                        <input type="email" placeholder="E.pochta" name="email" required>
                                     </div>
                                 </div>
-                                <div class="row contact_row2 text-sm-center">
-                                    <div class="col-lg-6 col-md-12">
-                                        <input type="text" value="+998" placeholder="Telefon" name="phone">
-                                    </div>
-                                    <div class="col-lg-6 col-md-12">
-                                        <input type="text" placeholder="Mavzu" name="mavzu">
+                                <div class="row contact_row2">
+                                    <div class="col-6">
+                                        <input type="text" placeholder="Mavzu" name="mavzu" required>
                                     </div>
                                 </div>
                                 <div class="row contact_row3">
                                     <div class="col-12">
-                                        <input type="text" placeholder="Xabarlar" name="message">
+                                        <input type="text" placeholder="Xabarlar" name="message" required>
                                         <button type="submit" class="contact_btn text-center">Yuborish</button>
                                     </div>
                                 </div>
                             </form>
+
                         </div>
-                        <div class="col-lg-5 col-md-12">
-                            <h2 class="mb-3 contact__title">329-sonli umumta’lim maktabi</h2>
+                        <div class="col-md-5">
+                            <h2 class="mb-3">329-sonli umumta’lim maktabi</h2>
 
                             <table id="w9" class="table table-striped table-bordered detail-view">
                                 <tbody>

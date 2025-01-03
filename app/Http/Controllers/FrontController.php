@@ -2,13 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gallery;
+use App\Models\Post;
+use App\Models\Profession;
+use App\Models\schoolMembers;
+use App\Models\staff;
+use App\Models\Timetable;
+use Illuminate\Http\Request;
+
 
 
 class FrontController extends Controller
 {
     public function index()
     {
-        return view('front.index');
+        $posts = Post::all();
+        $member = schoolMembers::first();
+        return view('front.index', compact('member', 'posts'));
     }
     public function connect()
     {
@@ -16,7 +26,8 @@ class FrontController extends Controller
     }
     public function education()
     {
-        return view('front.education');
+        $timetable = Timetable::all();
+        return view('front.education', compact('timetable'));
     }
     public function educationDetails()
     {
@@ -28,7 +39,8 @@ class FrontController extends Controller
     }
     public function gallery()
     {
-        return view('front.gallery');
+        $images = Gallery::all();
+        return view('front.gallery', compact('images'));
     }
     public function infographic()
     {
@@ -36,19 +48,28 @@ class FrontController extends Controller
     }
     public function leadership()
     {
-        return view('front.leadership');
+        $staff_data = ["Zam direktor", "Ma'naviyatchi", "Bo'lim boshlig'i", "Yoshlar yetakchisi"];
+        $staff = staff::whereHas('profession', function ($query) {
+            $query->where('name', 'Maktab direktori');
+        })->first();
+        $workers = staff::whereHas('profession', function ($query) use ($staff_data) {
+            $query->whereIn('name', $staff_data);
+        })->get();
+
+        return view('front.leadership', compact('staff', 'workers'));
+
+
     }
-    public function leadershipDetails()
-    {
-        return view('front.leadershipDetails');
-    }
+
+
     public function rekvizit()
     {
         return view('front.rekvizit');
     }
     public function schoolNews()
     {
-        return view('front.schoolNews');
+        $posts = Post::all();
+        return view('front.schoolNews', compact('posts'));
     }
     public function schoolRules()
     {
@@ -64,7 +85,8 @@ class FrontController extends Controller
     }
     public function teachers()
     {
-        return view('front.teacehrs');
+        $staff = staff::all();
+        return view('front.teacehrs', compact('staff'));
     }
     public function usefulResources()
     {
@@ -74,4 +96,9 @@ class FrontController extends Controller
     {
         return view('front.usefulResourcesDetails');
     }
+    public function searchResult()
+    {
+        return view('front.search');
+    }
+    
 }

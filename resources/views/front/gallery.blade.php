@@ -35,7 +35,7 @@
                         <h1 class="pageTitle text-dark">Maktab Galereyasi</h1>
                         <nav aria-label="breadcrumb">
                             <ol id="w5" class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{route('home')}}">Asosiy</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('home') }}">Asosiy</a></li>
                                 <li class="breadcrumb-item " aria-current="page">Maktab Galereyasi</li>
                             </ol>
                         </nav>
@@ -55,15 +55,11 @@
                 <div class="container">
                     <h1 class="gallery_title">Maktab Galereyasi</h1>
                     <div class="row">
-                        <div class="col-12 mb-2">
-                            <img src="/image/329-maktab.jpg" alt="Img" width="100%" height="90%">
-                        </div>
-                        <div class="col-12 mb-2">
-                            <img src="/image/ImgChidlrens.jpg" alt="Img" width="100%" height="90%">
-                        </div>
-                        <div class="col-12 mb-2">
-                            <img src="/image/img_zoom.jpg" alt="Img" width="100%" height="90%">
-                        </div>
+                        @foreach ($images as $image)
+                            <div class="col-12 mb-2">
+                                <img src="{{$image->image}}" alt="Img" width="50%" height="90%">
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

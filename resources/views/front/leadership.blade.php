@@ -115,7 +115,7 @@
                             <h1 class="pageTitle text-dark">Rahbariyat</h1>
                             <nav aria-label="breadcrumb">
                                 <ol id="w5" class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{route('home')}}">Asosiy</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Asosiy</a></li>
                                     <li class="breadcrumb-item " aria-current="page">Rahbariyat</li>
                                 </ol>
                             </nav>
@@ -135,56 +135,35 @@
 
                     <!-- Direktor -->
                     <div class="container">
-                        <a href="{{route('leadershipDetails')}}" class="mainLeader">
-                            <img alt="Director" src="/image/Director.jpg">
+                        <div class="mainLeader">
+                            <img alt="Director" src="{{ asset($staff->image) }}">
                             <div class="details">
-                                <h1><b>Aripova</b><br>Umida<br>Djangirovna</h1>
-                                <span>Maktab direktori</span>
+                                <h1><b>{{ $staff->first_name }}</b><br>{{ $staff->last_name }}<br></h1>
+                                <span>{{ $staff->profession->name }}</span>
                             </div>
-                        </a>
+                        </div>
                     </div>
+                    
+                    
+
+
 
                     <hr class="sections__line">
 
                     <!-- ZAM Direktors -->
                     <div class="container deputy_director">
                         <div class="row">
-                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                                <a href="{{route('leadershipDetails')}}" class="deputy_director-main">
-                                    <img src="/image/Director.jpg" width="60%" alt="Zam Director">
-                                    <div class="deputy_director-details">
-                                        <h1><b>Aripova</b><br>Umida<br>Djangirovna</h1>
-                                        <span>Zam direktor</span>
+                            @foreach ($workers as $item)
+                                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                    <div  class="deputy_director-main">
+                                        <img src="{{asset($item->image)}}" width="60%" height="70%" alt="Zam Director">
+                                        <div class="deputy_director-details">
+                                            <h1><b>{{$item->first_name}}</b><br>{{$item->last_name}}<br></h1>
+                                            <span>{{$item->profession->name}}</span>
+                                        </div>
                                     </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                                <a href="{{route('leadershipDetails')}}" class="deputy_director-main">
-                                    <img src="/image/Director.jpg" width="60%" alt="Zam Director">
-                                    <div class="deputy_director-details">
-                                        <h1><b>Aripova</b><br>Umida<br>Djangirovna</h1>
-                                        <span>M'anaviyatchi</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                                <a href="{{route('leadershipDetails')}}" class="deputy_director-main">
-                                    <img src="/image/Director.jpg" width="60%" alt="Zam Director">
-                                    <div class="deputy_director-details">
-                                        <h1><b>Aripova</b><br>Umida<br>Djangirovna</h1>
-                                        <span>Bo'lim boshlig'i</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                                <a href="{{route('leadershipDetails')}}" class="deputy_director-main">
-                                    <img src="/image/Director.jpg" width="60%" alt="Zam Director">
-                                    <div class="deputy_director-details">
-                                        <h1><b>Aripova</b><br>Umida<br>Djangirovna</h1>
-                                        <span>Yoshlar yetakchisi</span>
-                                    </div>
-                                </a>
-                            </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="d-flex align-items-center justify-content-between">
-        <h1>Staff edit</h1>
+        <h1>Staff info</h1>
         <a class="btn btn-success" href="{{route('staff.index')}}">Orqaga</a>
     </div>
     <h4>Id: {{ $staff->id }}</h4>

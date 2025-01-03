@@ -47,7 +47,7 @@
                             <h1 class="pageTitle text-dark">Ta'lim</h1>
                             <nav aria-label="breadcrumb">
                                 <ol id="w5" class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{route('home')}}">Asosiy</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Asosiy</a></li>
                                     <li class="breadcrumb-item " aria-current="page">Ta'lim</li>
                                 </ol>
                             </nav>
@@ -96,95 +96,17 @@
                             <!-- 1  --  SMENA -->
                             <div class="tab-pane fade active show" id="tab1" role="tabpanel">
                                 <div class="servicesList">
-                                    <a href="#">
-                                        <div>
-                                            <div class="icon">
-                                                <img alt="icon" src="/image/book svg.jfif">
+                                    @foreach ($timetable as $item)
+                                        <a href="{{asset($item->file)}}" download>
+                                            <div>
+                                                <div class="icon">
+                                                    <img alt="icon" src="/image/book svg.jfif">
+                                                </div>
+                                                <span>{{$item->title}}</span>
                                             </div>
-                                            <span>1-sinf dars jadvali</span>
-                                        </div>
-                                        <span>1-sinf dars jadvali</span>
-                                    </a>
-
-                                    <a href="#">
-                                        <div>
-                                            <div class="icon">
-                                                <img alt="icon" src="/image/book svg.jfif">
-                                            </div>
-                                            <span>3-sinf dars jadvali</span>
-                                        </div>
-                                        <span>3-sinf dars jadvali</span>
-                                    </a>
-
-                                    <a href="#">
-                                        <div>
-                                            <div class="icon">
-                                                <img alt="icon" src="/image/book svg.jfif">
-                                            </div>
-                                            <span>4-sinf dars jadvali</span>
-                                        </div>
-                                        <span>4-sinf dars jadvali</span>
-                                    </a>
-
-                                    <a href="#">
-                                        <div>
-                                            <div class="icon">
-                                                <img alt="icon" src="/image/book svg.jfif">
-                                            </div>
-                                            <span>5-sinf dars jadvali</span>
-                                        </div>
-                                        <span>5-sinf dars jadvali</span>
-                                    </a>
-
-                                    <a href="#">
-                                        <div>
-                                            <div class="icon">
-                                                <img alt="icon" src="/image/book svg.jfif">
-                                            </div>
-                                            <span>8-sinf dars jadvali</span>
-                                        </div>
-                                        <span>8-sinf dars jadvali</span>
-                                    </a>
-
-                                    <a href="#">
-                                        <div>
-                                            <div class="icon">
-                                                <img alt="icon" src="/image/book svg.jfif">
-                                            </div>
-                                            <span>9-sinf dars jadvali</span>
-                                        </div>
-                                        <span>9-sinf dars jadvali</span>
-                                    </a>
-
-                                    <a href="#">
-                                        <div>
-                                            <div class="icon">
-                                                <img alt="icon" src="/image/book svg.jfif">
-                                            </div>
-                                            <span>10-sinf dars jadvali</span>
-                                        </div>
-                                        <span>10-sinf dars jadvali</span>
-                                    </a>
-
-                                    <a href="#">
-                                        <div>
-                                            <div class="icon">
-                                                <img alt="icon" src="/image/book svg.jfif">
-                                            </div>
-                                            <span>11-sinf dars jadvali</span>
-                                        </div>
-                                        <span>11-sinf dars jadvali</span>
-                                    </a>
-
-                                    <a href="#">
-                                        <div>
-                                            <div class="icon">
-                                                <img alt="icon" src="/image/book svg.jfif">
-                                            </div>
-                                            <span>Dars soatlari</span>
-                                        </div>
-                                        <span>Dars soatlari</span>
-                                    </a>
+                                            <span>{{$item->title}}</span>
+                                        </a>
+                                    @endforeach
                                 </div>
                             </div>
                             <!-- 2  --  SMENA -->

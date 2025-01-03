@@ -121,7 +121,7 @@
 
                     <div class="leaderInfo">
                         <div class="photo">
-                            <img alt="image" src="/image/Director.jpg">
+                            <img alt="image" src="{{asset($staff->image)}}">
                         </div>
 
                         <div class="description">

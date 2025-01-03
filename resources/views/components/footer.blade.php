@@ -30,11 +30,11 @@
             <div class="footer_contact-right">
                 <a href="#">
                     <i class="fab fa-facebook-f"></i>
-                    <span>@329_maktab</span>
+                    <span>@1maktab</span>
                 </a>
                 <a href="#">
                     <i class="fab fa-telegram-plane"></i>
-                    <span>@239_maktab</span>
+                    <span>@1_maktab</span>
                 </a>
             </div>
             <div class="footer_logo">
@@ -42,8 +42,8 @@
                     <img src="{{ asset('/image/Gerb.png') }}" alt="Logo" width="20%">
                 </span>
                 <a href="">
-                    329-sonli Umumta'lim maktabi
-                    <i>Toshkent, Yangihayot tumani</i>
+                    1-sonli Umumta'lim maktabi
+                    <i>O'zbekiston</i>
                 </a>
             </div>
 

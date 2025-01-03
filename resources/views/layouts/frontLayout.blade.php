@@ -48,6 +48,7 @@
 <script>
     @yield('script')
 </script>
-<!-- Js -->
+
+
 
 </html>

@@ -2,14 +2,23 @@
 
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FoydaliResursController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfessionController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SchoolMembersController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\TimetableController;
+use App\Http\Controllers\UsefulResourcesController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontController::class, 'index'])->name('home');
 Route::get('/faq', [FrontController::class, 'faq'])->name('faq');
+Route::get('/search', [SearchController::class, 'search'])->name('search');
 Route::get('/connect', [FrontController::class, 'connect'])->name('connect');
 Route::get('/gallery', [FrontController::class, 'gallery'])->name('gallery');
 Route::get('/teachers', [FrontController::class, 'teachers'])->name('teachers');
@@ -20,12 +29,13 @@ Route::get('/leadership', [FrontController::class, 'leadership'])->name('leaders
 Route::get('/infographic', [FrontController::class, 'infographic'])->name('infographic');
 Route::get('/schoolrules', [FrontController::class, 'schoolRules'])->name('schoolRules');
 Route::get('/schooltasks', [FrontController::class, 'schoolTasks'])->name('schoolTasks');
+Route::get('/searchresult', [FrontController::class, 'searchResult'])->name('searchresult');
 Route::get('/statesymbols', [FrontController::class, 'stateSymbols'])->name('stateSymbols');
-Route::get('/usefulresources', [FrontController::class, 'usefulresources'])->name('usefulresources');
+Route::get('/usefulresources', [UsefulResourcesController::class, 'index'])->name('usefulresources');
 Route::get('/educationdetails', [FrontController::class, 'educationDetails'])->name('educationDetails');
-Route::get('/leadershipdetails', [FrontController::class, 'leadershipDetails'])->name('leadershipDetails');
-Route::get('/usefulresourcesdetails', [FrontController::class, 'usefulresourcesDetails'])->name('usefulresourcesDetails');
-
+Route::get('/usefulresources/details/{id}', [UsefulResourcesController::class, 'details'])->name('usefulresourcesDetails');
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
+Route::get('/foydali-resurslar', [FoydaliResursController::class, 'index']);
 
 
 
@@ -33,9 +43,14 @@ Route::prefix('admin', )->group(function () {
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->middleware(['auth', 'verified'])->name('dashboard');
+    Route::resource('posts', PostController::class);
     Route::resource('staff', StaffController::class);
-    Route::resource('professions', ProfessionController::class);
+    Route::resource('schoolmembers', SchoolMembersController::class);
     Route::resource('categories', CategoryController::class);
+    Route::resource('timetable', TimetableController::class);
+    Route::resource('professions', ProfessionController::class);
+    Route::resource('gallery', GalleryController::class);
+    Route::get('timetable/download/{id}', [TimetableController::class, 'download'])->name('timetable.download');
 });
 
 Route::middleware('auth')->group(function () {

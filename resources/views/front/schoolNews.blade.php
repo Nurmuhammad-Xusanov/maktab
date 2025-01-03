@@ -66,7 +66,7 @@
                 <div class="schoolNews">
                     <div class="container">
                         <div class="navigationTabs">
-                            <a href="#tab1" class="active" data-bs-toggle='tab' role="tab"> 
+                            <a href="#tab1" class="active" data-bs-toggle='tab' role="tab">
                                 <i class="fas fa-newspaper"></i> Yangiliklar
                             </a>
                             <a href="#tab2" class="" data-bs-toggle="tab" role="tab">
@@ -79,39 +79,20 @@
                             <div class="tab-pane fade active show" id="tab1" role="tabpanel" aria-selected="true">
                                 <div class="imageCardBoxes">
                                     <div class="row">
-                                        <div class="col-xl-4 col-lg-4 col-md-6">
-                                            <a href="">
-                                                <div class="imageBox">
-                                                    <img alt="image" src="/image/It live logo for red-04-04.png">
-                                                </div>
-                                                <h1>Rossiya universitetlarida taʼlim olmoqchimisiz? Unda koʻrgazmaga
-                                                    marhamat!
-                                                </h1>
-                                                <span>04 Oktabr 2021</span>
-                                            </a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-4 col-md-6">
-                                            <a href="">
-                                                <div class="imageBox">
-                                                    <img alt="image" src="/image/It live logo for red-04-04.png">
-                                                </div>
-                                                <h1>Rossiya universitetlarida taʼlim olmoqchimisiz? Unda koʻrgazmaga
-                                                    marhamat!
-                                                </h1>
-                                                <span>04 Oktabr 2021</span>
-                                            </a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-4 col-md-6">
-                                            <a href="">
-                                                <div class="imageBox">
-                                                    <img alt="image" src="/image/It live logo for red-04-04.png">
-                                                </div>
-                                                <h1>Rossiya universitetlarida taʼlim olmoqchimisiz? Unda koʻrgazmaga
-                                                    marhamat!
-                                                </h1>
-                                                <span>04 Oktabr 2021</span>
-                                            </a>
-                                        </div>
+
+                                        @foreach ($posts as $post)
+                                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                                <a href="">
+                                                    <div class="imageBox">
+                                                        <img alt="image" src="{{ asset($post->image) }}">
+                                                    </div>
+                                                    <h1>{{ $post->title }}
+                                                        {{-- <p>{{ $post->description }}</p> --}}
+                                                    </h1>
+                                                    <span>{{ $post->date }}</span>
+                                                </a>
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
